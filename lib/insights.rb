@@ -9,13 +9,8 @@ class Insights
     @video_statistics = parsed_json["videos"]
   end
 
-  def compute_likes_ratio(likes, dislikes)
-    total = likes + dislikes
-    (likes.to_f / total.to_f) * 100
-  end
 
   def highest_like_ratio
-
     titles_to_ratios = {}
 
     @video_statistics.each do |video|
@@ -24,6 +19,13 @@ class Insights
     end
 
     titles_to_ratios.key(titles_to_ratios.values.max)
+  end
+
+  private
+
+  def compute_likes_ratio(likes, dislikes)
+    total = likes + dislikes
+    (likes.to_f / total.to_f) * 100
   end
 
 end
