@@ -15,8 +15,8 @@ puts small_indent + "Video with the highest % likes-to-dislikes:"
 puts big_indent + channel_insights.get_video_with_highest_likes_ratio
 puts
 puts small_indent + "Average likes-to-dislikes:"
-puts big_indent + channel_insights.mean_likes_ratio.to_s
+puts big_indent + channel_insights.mean_likes_ratio
 puts
 puts small_indent + "Total video views:"
-puts big_indent + channel_insights.compute_total_views.to_s
+puts big_indent + channel_insights.compute_total_views
 puts line_break

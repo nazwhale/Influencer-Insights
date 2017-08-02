@@ -21,13 +21,13 @@ class Insights
     ratios = get_ratios_array
     total = ratios.inject { |sum, item| sum + item }.to_f
     mean = total / ratios.length
-    mean.round(1)
+    mean.round(1).to_s
   end
 
   def compute_total_views
     sum = 0
     @video_statistics.each { |video| sum += video["views"] }
-    sum
+    sum.to_s
   end
 
   private
