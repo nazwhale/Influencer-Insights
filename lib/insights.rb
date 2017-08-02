@@ -1,12 +1,20 @@
+require 'json'
+
 class Insights
 
   attr_reader :video_statistics
+  TITLE_DIVIDER = " | "
 
   def initialize(json_filename)
     @video_statistics = parse(json_filename)
   end
 
-  def highest_likes_ratio
+  def get_influencer_name
+    title = @video_statistics[0]["title"]
+    title.partition(TITLE_DIVIDER).last
+  end
+
+  def video_with_highest_likes_ratio
     get_titles_to_likes_ratio.key(get_titles_to_likes_ratio.values.max)
   end
 
@@ -41,10 +49,15 @@ class Insights
 
     @video_statistics.each do |video|
       ratio = compute_likes_ratio(video["likes"], video["dislikes"])
-      titles_to_ratios[video["title"]] = ratio
+      video_name = isolate_video_name(video["title"])
+      titles_to_ratios[video_name] = ratio
     end
 
     titles_to_ratios
+  end
+
+  def isolate_video_name(title)
+    title.partition(TITLE_DIVIDER).first
   end
 
 end

@@ -14,10 +14,17 @@ describe Insights do
     end
   end
 
+  describe '#get_influencer_name' do
+    it 'returns the name of the YouTube influencer' do
+      INFLUENCER = "Zoella"
+      expect(insights.get_influencer_name).to eq INFLUENCER
+    end
+  end
+
   describe '#highest_likes_ratio' do
     it 'returns video title with the best ratio' do
-      TOP_VIDEO = "Most Likely To : Tanya Edition | Zoella"
-      expect(insights.highest_likes_ratio).to eq TOP_VIDEO
+      TOP_VIDEO = "Most Likely To : Tanya Edition"
+      expect(insights.video_with_highest_likes_ratio).to eq TOP_VIDEO
     end
   end
 
