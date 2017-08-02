@@ -14,7 +14,7 @@ class Insights
     title.partition(TITLE_DIVIDER).last
   end
 
-  def highest_likes_ratio
+  def video_with_highest_likes_ratio
     get_titles_to_likes_ratio.key(get_titles_to_likes_ratio.values.max)
   end
 

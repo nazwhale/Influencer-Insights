@@ -24,7 +24,7 @@ describe Insights do
   describe '#highest_likes_ratio' do
     it 'returns video title with the best ratio' do
       TOP_VIDEO = "Most Likely To : Tanya Edition"
-      expect(insights.highest_likes_ratio).to eq TOP_VIDEO
+      expect(insights.video_with_highest_likes_ratio).to eq TOP_VIDEO
     end
   end
 

@@ -1,8 +1,12 @@
-# JSON Analyser
+# Influencer Insights
 [![Build Status](https://travis-ci.org/nazwhale/PTT.svg?branch=master)](https://travis-ci.org/nazwhale/PTT)
 [![Coverage Status](https://coveralls.io/repos/github/nazwhale/PTT/badge.svg?branch=master)](https://coveralls.io/github/nazwhale/PTT?branch=master)
 
-A JSON parser for YouTube video analytics.
+This program gives a small selection of insights when given a JSON file of YouTube influencer data:
+
+- The title of the video with the highest percentage of likes-to-dislikes
+- The average (mean) percentage of likes-to-dislikes
+- The total number of views
 
 ### Installation
 Clone repository:
@@ -19,9 +23,9 @@ $ bundle install
 
 ### Use
 
-In the terminal, simply run `ruby enlighten_me.rb` and specify the JSON information file of the influencer you wish to learn more about.
+In the terminal, simply run `ruby enlighten_me.rb` and specify the JSON information file of the influencer you wish to learn more about as an argument.
 
-For example:
+Let's test it on some data from [Zoella's](https://www.youtube.com/user/zoella280390?gl=GB&hl=en-GB) channel...
 
 ```
 $ ruby enlighten_me.rb zoella_video_stats.json
@@ -32,7 +36,7 @@ $ ruby enlighten_me.rb zoella_video_stats.json
       Most Likely To : Tanya Edition
 
     Average likes-to-dislikes:
-      99.00276583669357
+      99.0
 
     Total video views:
       14125776
