@@ -10,8 +10,7 @@ class Insights
   end
 
   def get_influencer_name
-    title = @video_statistics[0]["title"]
-    title.partition(TITLE_DIVIDER).last
+    get_first_video_title.partition(TITLE_DIVIDER).last
   end
 
   def get_video_with_highest_likes_ratio
@@ -19,7 +18,7 @@ class Insights
   end
 
   def mean_likes_ratio
-    ratios = get_names_with_likes_ratio.values
+    ratios = get_ratios_array
     total = ratios.inject { |sum, item| sum + item }.to_f
     mean = total / ratios.length
     mean.round(1)
@@ -59,6 +58,14 @@ class Insights
 
   def isolate_video_name(title)
     title.partition(TITLE_DIVIDER).first
+  end
+
+  def get_first_video_title
+    @video_statistics[0]["title"]
+  end
+
+  def get_ratios_array
+    get_names_with_likes_ratio.values
   end
 
 end
