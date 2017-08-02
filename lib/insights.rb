@@ -1,3 +1,5 @@
+require 'json'
+
 class Insights
 
   attr_reader :video_statistics
