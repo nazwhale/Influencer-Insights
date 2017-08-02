@@ -16,13 +16,22 @@ describe Insights do
 
   describe '#highest_likes_ratio' do
     it 'returns video title with the best ratio' do
-      expect(insights.highest_likes_ratio).to eq "Most Likely To : Tanya Edition | Zoella"
+      TOP_VIDEO = "Most Likely To : Tanya Edition | Zoella"
+      expect(insights.highest_likes_ratio).to eq TOP_VIDEO
     end
   end
 
   describe '#mean_likes_ratio' do
     it 'returns the average percentage of likes to dislikes' do
-      expect(insights.mean_likes_ratio.round(3)).to eq 99.003
+      MEAN_LIKES_RATIO = 99.003
+      expect(insights.mean_likes_ratio.round(3)).to eq MEAN_LIKES_RATIO
+    end
+  end
+
+  describe '#total_views' do
+    it 'returns the summed views for all videos' do
+      TOTAL_VIEWS = 14125776
+      expect(insights.total_views).to eq TOTAL_VIEWS
     end
   end
 

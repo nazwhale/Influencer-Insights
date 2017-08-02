@@ -16,6 +16,12 @@ class Insights
     sum_of_ratios / ratios.length
   end
 
+  def total_views
+    sum = 0
+    @video_statistics.each { |video| sum += video["views"] }
+    sum
+  end
+
   private
 
   def parse(json_filename)
