@@ -8,4 +8,8 @@ class Insights
     @video_statistics = JSON.parse(json)
   end
 
+  def compute_likes_ratio(likes, dislikes)
+    (dislikes.to_f / likes.to_f) * 10000
+  end
+
 end

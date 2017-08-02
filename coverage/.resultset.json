@@ -2,22 +2,24 @@
   "RSpec": {
     "coverage": {
       "/Users/nadeemmalik/GoogleDrive/Projects/PTT/spec/insights_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         null,
         1,
         null,
         1,
+        null,
+        3,
+        null,
+        1,
+        1,
+        1,
         1,
         1,
         null,
-        2,
         null,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -32,7 +34,11 @@
         1,
         null,
         1,
-        1,
+        2,
+        2,
+        2,
+        null,
+        null,
         1,
         1,
         null,
@@ -40,6 +46,6 @@
         null
       ]
     },
-    "timestamp": 1501697078
+    "timestamp": 1501697802
   }
 }
