@@ -16,3 +16,25 @@ Install dependencies with [Bundler](http://bundler.io/):
 $ gem install bundler     
 $ bundle install
 ```
+
+### Use
+
+In the terminal, simply run `ruby enlighten_me.rb` and specify the JSON information file of the influencer you wish to learn more about.
+
+For example:
+
+```
+$ ruby enlighten_me.rb zoella_video_stats.json
+/====================================================/
+  Influencer Insights for Zoella:
+
+    Video with the highest % likes-to-dislikes:
+      Most Likely To : Tanya Edition
+
+    Average likes-to-dislikes:
+      99.00276583669357
+
+    Total video views:
+      14125776
+/====================================================/
+```
