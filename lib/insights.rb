@@ -1,4 +1,4 @@
-require 'json'
+require_relative 'parser'
 
 class Insights
 
@@ -6,7 +6,7 @@ class Insights
   TITLE_DIVIDER = " | "
 
   def initialize(json_filename)
-    @video_statistics = parse(json_filename)
+    @video_statistics = Parser.new(json_filename).parse_file
   end
 
   def get_influencer_name
@@ -31,13 +31,6 @@ class Insights
   end
 
   private
-
-  def parse(json_filename)
-    file = open(json_filename)
-    json = file.read
-    parsed_json = JSON.parse(json)
-    parsed_json["videos"]
-  end
 
   def compute_likes_ratio(likes, dislikes)
     total = likes + dislikes
