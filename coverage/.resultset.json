@@ -24,12 +24,25 @@
         null,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/nadeemmalik/GoogleDrive/Projects/PTT/lib/insights.rb": [
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        2,
+        null,
         null,
         1,
         2,
@@ -60,6 +73,6 @@
         null
       ]
     },
-    "timestamp": 1501702423
+    "timestamp": 1501702821
   }
 }

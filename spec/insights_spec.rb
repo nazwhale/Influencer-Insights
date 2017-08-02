@@ -14,9 +14,15 @@ describe Insights do
     end
   end
 
-  describe '#compute_likes' do
-    it 'returns title of video with the best like ratio' do
-      expect(insights.highest_like_ratio).to eq "Most Likely To : Tanya Edition | Zoella"
+  describe '#highest_likes_ratio' do
+    it 'returns video title with the best ratio' do
+      expect(insights.highest_likes_ratio).to eq "Most Likely To : Tanya Edition | Zoella"
+    end
+  end
+
+  describe '#mean_likes_ratio' do
+    it 'returns the average percentage of likes to dislikes' do
+      
     end
   end
 

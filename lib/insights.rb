@@ -3,14 +3,10 @@ class Insights
   attr_reader :video_statistics
 
   def initialize(json_filename)
-    file = open(json_filename)
-    json = file.read
-    parsed_json = JSON.parse(json)
-    @video_statistics = parsed_json["videos"]
+    @video_statistics = parse(json_filename)
   end
 
-
-  def highest_like_ratio
+  def highest_likes_ratio
     titles_to_ratios = {}
 
     @video_statistics.each do |video|
@@ -22,6 +18,13 @@ class Insights
   end
 
   private
+
+  def parse(json_filename)
+    file = open(json_filename)
+    json = file.read
+    parsed_json = JSON.parse(json)
+    parsed_json["videos"]
+  end
 
   def compute_likes_ratio(likes, dislikes)
     total = likes + dislikes
