@@ -22,7 +22,7 @@ describe Insights do
 
   describe '#mean_likes_ratio' do
     it 'returns the average percentage of likes to dislikes' do
-      
+      expect(insights.mean_likes_ratio.round(3)).to eq 99.003
     end
   end
 

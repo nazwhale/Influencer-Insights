@@ -7,14 +7,13 @@ class Insights
   end
 
   def highest_likes_ratio
-    titles_to_ratios = {}
+    get_titles_to_likes_ratio.key(get_titles_to_likes_ratio.values.max)
+  end
 
-    @video_statistics.each do |video|
-      ratio = compute_likes_ratio(video["likes"], video["dislikes"])
-      titles_to_ratios[video["title"]] = ratio
-    end
-
-    titles_to_ratios.key(titles_to_ratios.values.max)
+  def mean_likes_ratio
+    ratios = get_titles_to_likes_ratio.values
+    sum_of_ratios = ratios.inject { |sum, item| sum + item }.to_f
+    sum_of_ratios / ratios.length
   end
 
   private
@@ -29,6 +28,17 @@ class Insights
   def compute_likes_ratio(likes, dislikes)
     total = likes + dislikes
     (likes.to_f / total.to_f) * 100
+  end
+
+  def get_titles_to_likes_ratio
+    titles_to_ratios = {}
+
+    @video_statistics.each do |video|
+      ratio = compute_likes_ratio(video["likes"], video["dislikes"])
+      titles_to_ratios[video["title"]] = ratio
+    end
+
+    titles_to_ratios
   end
 
 end
