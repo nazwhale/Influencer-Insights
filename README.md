@@ -23,7 +23,7 @@ $ bundle install
 
 ### Use
 
-In the terminal, simply run `ruby enlighten_me.rb` and specify the JSON information file of the influencer you wish to learn more about as an argument.
+In the terminal, simply run `ruby enlighten_me.rb` with the JSON information file of the influencer you wish to learn more about as an argument.
 
 Let's test it on some data from [Zoella's](https://www.youtube.com/user/zoella280390?gl=GB&hl=en-GB) channel...
 
@@ -35,8 +35,8 @@ $ ruby enlighten_me.rb zoella_video_stats.json
     Video with the highest % likes-to-dislikes:
       Most Likely To : Tanya Edition
 
-    Average likes-to-dislikes:
-      99.0
+    Average likes-to-dislikes ratio:
+      99.0%
 
     Total video views:
       14125776
