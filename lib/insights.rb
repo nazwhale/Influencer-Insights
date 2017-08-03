@@ -6,7 +6,7 @@ class Insights
   TITLE_DIVIDER = " | "
 
   def initialize(json_filename)
-    @video_statistics = Parser.new(json_filename).parse_file
+    @video_statistics = Parser.open_and_parse(json_filename)
   end
 
   def get_influencer_name
