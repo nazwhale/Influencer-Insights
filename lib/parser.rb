@@ -2,24 +2,27 @@ require 'json'
 
 class Parser
 
-  def self.open_and_parse(json_filename)
-    unparsed_json = self.open_file(json_filename)
+  def initialize(videos_json)
+    @videos_json = videos_json
+  end
+
+  def read_and_parse
+    unparsed_json = read_file(@videos_json)
     parse_file(unparsed_json)
   end
 
   private
 
-  def self.open_file(json_filename)
-    file = open(json_filename)
-    file.read
+  def read_file(videos_json)
+    videos_json.read
   end
 
-  def self.parse_file(unparsed_json)
+  def parse_file(unparsed_json)
     parsed_json = JSON.parse(unparsed_json)
     get_videos_arary(parsed_json)
   end
 
-  def self.get_videos_arary(parsed_json)
+  def get_videos_arary(parsed_json)
     parsed_json["videos"]
   end
 
