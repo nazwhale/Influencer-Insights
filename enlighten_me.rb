@@ -1,7 +1,7 @@
 require_relative 'lib/insights'
 
-json_filename = ARGV[0]
-channel_insights = Insights.new(json_filename)
+videos_json = open(ARGV[0])
+channel_insights = Insights.new(videos_json)
 
 line_break = "  /====================================================/"
 big_indent = "        "

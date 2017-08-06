@@ -2,15 +2,45 @@ require 'parser'
 
 describe Parser do
 
-  test_file = "zoella_video_stats.json"
-  opened_file = open(test_file)
-  unparsed_json = opened_file.read
-  parsed_json = JSON.parse(unparsed_json)
-  array_of_videos = parsed_json["videos"]
+  let(:videos_json) do
+    %Q{
+      {
+        "videos": [
+          { "title": "Video A | YouTuber",
+            "views": 15000,
+            "likes": 5000,
+            "dislikes": 87
+          },
+          { "title": "Video B | YouTuber",
+            "views": 200,
+            "likes": 77500,
+            "dislikes": 35
+          }
+        ]
+      }
+    }
+  end
+
+  let(:parsed_json) do
+    [
+      {"title" => "Video A | YouTuber",
+        "views" => 15000,
+        "likes" => 5000,
+        "dislikes" => 87
+      },
+      {"title" => "Video B | YouTuber",
+       "views" => 200,
+       "likes" => 77500,
+       "dislikes" => 35
+      }
+    ]
+  end
+
+  subject(:parser) { described_class.new(StringIO.new(videos_json)) }
 
   describe '#open_and_parse' do
     it 'outputs a parsed JSON file' do
-      expect(Parser.open_and_parse(test_file)).to eq array_of_videos
+      expect(parser.read_and_parse).to eq parsed_json
     end
   end
 

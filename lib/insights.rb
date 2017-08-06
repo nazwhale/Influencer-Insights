@@ -5,8 +5,8 @@ class Insights
   attr_reader :video_statistics
   TITLE_DIVIDER = " | "
 
-  def initialize(json_filename)
-    @video_statistics = parse_file(json_filename)
+  def initialize(videos_json)
+    @video_statistics = parse_file(videos_json)
   end
 
   def get_influencer_name
@@ -32,8 +32,9 @@ class Insights
 
   private
 
-  def parse_file(json_filename)
-    Parser.open_and_parse(json_filename)
+  def parse_file(videos_json)
+    parser = Parser.new(videos_json)
+    parser.read_and_parse
   end
 
   def compute_likes_ratio(likes, dislikes)
