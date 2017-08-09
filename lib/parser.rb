@@ -19,11 +19,9 @@ class Parser
   end
 
   def parse_file(unparsed_json)
-    begin
-      JSON.parse(unparsed_json)
+    JSON.parse(unparsed_json)
     rescue JSON::ParserError
       fail "Please enter a valid json file"
-    end
   end
 
   def get_videos_arary(parsed_json)

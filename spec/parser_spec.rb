@@ -50,12 +50,13 @@ describe Parser do
 
     context 'invalid json' do
       it 'returns an error message if given invalid json' do
-        @additional_videos = '[[] "tite": "Negative video", "views": -100 }'
+        @additional_videos = '[[] "title": "Negative video", "views": -100 }'
         message = "Please enter a valid json file"
         expect{parser.read_and_parse}.to raise_error message
       end
 
       # I get valid JSON but which is unrelated
+      # it ''
 
     end
   end
