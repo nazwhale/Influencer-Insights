@@ -39,16 +39,15 @@ describe Parser do
 
   subject(:parser) { described_class.new(StringIO.new(videos_json)) }
 
-
   describe '#open_and_parse' do
 
-    context 'valid json' do
+    context 'correct json' do
       it 'outputs a parsed JSON file' do
         expect(parser.read_and_parse).to eq parsed_json
       end
     end
 
-    context 'invalid json' do
+    context 'incorrect json' do
       it 'returns an error message if given invalid json' do
         @additional_videos = '[[] "title": "Negative video", "views": -100 }'
         message = "Please enter a valid json file"
@@ -56,7 +55,11 @@ describe Parser do
       end
 
       # I get valid JSON but which is unrelated
-      # it ''
+      it 'returns an error message if given unrelated json' do
+        @additional_videos = ', {"cheeseName": "Stinking bishop", "cheesiness": 10, "creaminess": 6, "pong": 11 }'
+        message = "Please enter a json file with influencer data"
+        expect{parser.read_and_parse}.to raise_error message
+      end
 
     end
   end
