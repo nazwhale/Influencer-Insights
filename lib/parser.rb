@@ -8,18 +8,32 @@ class Parser
 
   def read_and_parse
     unparsed_json = read_file(@videos_json)
-    parse_file(unparsed_json)
+    parsed_json = parse_file(unparsed_json)
+    get_videos_arary(parsed_json) if appropriate_json?(parsed_json)
   end
 
   private
+
+  def appropriate_json?(parsed_json)
+    message = "Please enter a json file with influencer data"
+    parsed_json["videos"].each { |video| fail message unless has_correct_keys?(video) }
+  end
+
+  def has_correct_keys?(video)
+    video.key?("title") &&
+    video.key?("views") &&
+    video.key?("likes") &&
+    video.key?("dislikes")
+  end
 
   def read_file(videos_json)
     videos_json.read
   end
 
   def parse_file(unparsed_json)
-    parsed_json = JSON.parse(unparsed_json)
-    get_videos_arary(parsed_json)
+    JSON.parse(unparsed_json)
+    rescue JSON::ParserError
+      fail "Please enter a valid json file"
   end
 
   def get_videos_arary(parsed_json)
