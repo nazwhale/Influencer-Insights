@@ -22,6 +22,7 @@ class Parser
   def has_correct_keys?(video)
     video.key?("title") &&
     video.key?("views") &&
+    video.key?("published_at") &&
     video.key?("likes") &&
     video.key?("dislikes")
   end
