@@ -40,29 +40,37 @@ describe Insights do
 
   describe '#get_influencer_name' do
     it 'returns the name of the YouTube influencer' do
-      INFLUENCER = "YouTuber"
-      expect(insights.get_influencer_name).to eq INFLUENCER
+      influencer = "YouTuber"
+      expect(insights.get_influencer_name).to eq influencer
     end
   end
 
   describe '#get_video_with_highest_likes_ratio' do
     it 'returns video title with the best ratio' do
-      TOP_VIDEO = "Video E"
-      expect(insights.get_video_with_highest_likes_ratio).to eq TOP_VIDEO
+      top_video = "Video E"
+      expect(insights.get_video_with_highest_likes_ratio).to eq top_video
     end
   end
 
   describe '#mean_likes_ratio' do
     it 'returns the average percentage of likes to dislikes' do
-      MEAN_LIKES_RATIO = "99.5"
-      expect(insights.mean_likes_ratio).to eq MEAN_LIKES_RATIO
+      mean_likes_ration = "99.5"
+      expect(insights.mean_likes_ratio).to eq mean_likes_ration
     end
   end
 
   describe '#compute_total_views' do
     it 'returns the summed views for all videos' do
-      TOTAL_VIEWS = "49400"
-      expect(insights.compute_total_views).to eq TOTAL_VIEWS
+      total_views = "49400"
+      expect(insights.compute_total_views).to eq total_views
+    end
+  end
+
+  describe '#compute_mean_time_intervals' do
+    xit 'creates array of video release times' do
+      expect(insights.get_video_release_times).to eq 
+
+
     end
   end
 
