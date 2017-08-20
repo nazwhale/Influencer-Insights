@@ -95,10 +95,7 @@ class Insights
   def get_intervals(array)
     intervals = []
     array.each_with_index do |element, index|
-      unless element == array[-1]
-        interval = array[index + 1] - array[index]
-        intervals << interval
-      end
+      intervals << array[index + 1] - array[index] unless element == array[-1]
     end
     intervals
   end
