@@ -8,11 +8,13 @@ describe Parser do
         "videos": [
           { "title": "Video A | YouTuber",
             "views": 15000,
+            "published_at": "2016-09-11T19:21:39.000Z",
             "likes": 5000,
             "dislikes": 87
           },
           { "title": "Video B | YouTuber",
             "views": 200,
+            "published_at": "2016-08-31T18:00:04.000Z",
             "likes": 77500,
             "dislikes": 35
           }
@@ -26,11 +28,13 @@ describe Parser do
     [
       {"title" => "Video A | YouTuber",
         "views" => 15000,
+       "published_at"=> "2016-09-11T19:21:39.000Z",
         "likes" => 5000,
         "dislikes" => 87
       },
       {"title" => "Video B | YouTuber",
        "views" => 200,
+       "published_at"=> "2016-08-31T18:00:04.000Z",
        "likes" => 77500,
        "dislikes" => 35
       }
