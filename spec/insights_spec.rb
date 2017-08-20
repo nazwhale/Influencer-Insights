@@ -73,8 +73,8 @@ describe Insights do
 
   describe '#compute_mean_release_interval' do
     it 'finds the mean interval between influencers videos' do
-      video_release_times = "49752758250.0"
-      expect(insights.compute_mean_release_interval).to eq video_release_times
+      mean_interval = "15.0"
+      expect(insights.compute_mean_release_interval).to eq mean_interval
     end
   end
 

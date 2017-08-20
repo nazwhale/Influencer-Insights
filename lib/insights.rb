@@ -30,7 +30,7 @@ class Insights
 
   def compute_mean_release_interval
     ordered_release_times = get_release_times.sort
-    ordered_release_times.map! { |time| strip_non_numbers(time) }
+    ordered_release_times.map! { |time| convert_to_datetime(time) }
     get_mean_intervals(ordered_release_times)
   end
 
@@ -82,8 +82,8 @@ class Insights
     release_times
   end
 
-  def strip_non_numbers(string)
-    string.gsub(/[^0-9]/,"").to_i
+  def convert_to_datetime(time)
+    DateTime.strptime(time, "%Y-%m-%dT%H:%M:%S")
   end
 
   def get_mean_intervals(array)
@@ -95,7 +95,7 @@ class Insights
     intervals = []
     array.each_with_index do |element, index|
       unless element == array[-1]
-        interval = array[index + 1] - element
+        interval = array[index + 1] - array[index]
         intervals << interval
       end
     end
