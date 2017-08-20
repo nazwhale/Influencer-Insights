@@ -19,4 +19,7 @@ puts big_indent + channel_insights.mean_likes_ratio + "%"
 puts
 puts small_indent + "Total video views:"
 puts big_indent + channel_insights.compute_total_views
+puts
+puts small_indent + "Average video release interval:"
+puts big_indent + channel_insights.compute_mean_release_interval + " days"
 puts line_break

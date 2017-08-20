@@ -40,5 +40,7 @@ $ ruby enlighten_me.rb zoella_video_stats.json
 
     Total video views:
       14125776
+
+    Average video release interval:
+      7.3 days
 /====================================================/
-```

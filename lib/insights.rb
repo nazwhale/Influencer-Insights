@@ -1,4 +1,5 @@
 require_relative 'parser'
+require 'date'
 
 class Insights
 
