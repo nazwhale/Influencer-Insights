@@ -67,7 +67,7 @@ class Insights
   end
 
   def first_video_title
-    @video_statistics[0]["title"]
+    @video_statistics.first["title"]
   end
 
   def ratios_array
@@ -90,7 +90,7 @@ class Insights
   def intervals(array)
     intervals = []
     array.each_with_index do |element, index|
-      intervals << array[index + 1] - array[index] unless element == array[-1]
+      intervals << array[index + 1] - array[index] unless element == array.last
     end
     intervals
   end
