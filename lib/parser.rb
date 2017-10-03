@@ -9,7 +9,7 @@ class Parser
   def read_and_parse
     unparsed_json = read_file(@videos_json)
     parsed_json = parse_file(unparsed_json)
-    get_videos_arary(parsed_json) if appropriate_json?(parsed_json)
+    videos_array(parsed_json) if appropriate_json?(parsed_json)
   end
 
   private
@@ -37,7 +37,7 @@ class Parser
       fail "Please enter a valid json file"
   end
 
-  def get_videos_arary(parsed_json)
+  def videos_array(parsed_json)
     parsed_json["videos"]
   end
 

@@ -43,17 +43,17 @@ describe Insights do
 
   subject(:insights) { described_class.new(StringIO.new(videos_json)) }
 
-  describe '#get_influencer_name' do
+  describe '#influencer_name' do
     it 'returns the name of the YouTube influencer' do
       influencer = "YouTuber"
-      expect(insights.get_influencer_name).to eq influencer
+      expect(insights.influencer_name).to eq influencer
     end
   end
 
-  describe '#get_video_with_highest_likes_ratio' do
+  describe '#video_with_highest_likes_ratio' do
     it 'returns video title with the best ratio' do
       top_video = "Video E"
-      expect(insights.get_video_with_highest_likes_ratio).to eq top_video
+      expect(insights.video_with_highest_likes_ratio).to eq top_video
     end
   end
 

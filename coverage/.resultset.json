@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nadeemmalik/GoogleDrive/Projects/PTT/spec/insights_spec.rb": [
+      "/Users/naz/Dev/PTT/spec/insights_spec.rb": [
         1,
         null,
         1,
@@ -84,7 +84,7 @@
         null,
         null
       ],
-      "/Users/nadeemmalik/GoogleDrive/Projects/PTT/lib/insights.rb": [
+      "/Users/naz/Dev/PTT/lib/insights.rb": [
         1,
         1,
         null,
@@ -189,7 +189,7 @@
         null,
         null
       ],
-      "/Users/nadeemmalik/GoogleDrive/Projects/PTT/lib/parser.rb": [
+      "/Users/naz/Dev/PTT/lib/parser.rb": [
         1,
         null,
         1,
@@ -235,7 +235,7 @@
         null,
         null
       ],
-      "/Users/nadeemmalik/GoogleDrive/Projects/PTT/spec/parser_spec.rb": [
+      "/Users/naz/Dev/PTT/spec/parser_spec.rb": [
         1,
         null,
         1,
@@ -309,6 +309,6 @@
         null
       ]
     },
-    "timestamp": 1503246802
+    "timestamp": 1507028657
   }
 }

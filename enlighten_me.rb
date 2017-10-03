@@ -9,10 +9,10 @@ small_indent = "      "
 smaller_indent = "    "
 
 puts line_break
-puts smaller_indent + "Influencer Insights for " + channel_insights.get_influencer_name + ":"
+puts smaller_indent + "Influencer Insights for " + channel_insights.influencer_name + ":"
 puts
 puts small_indent + "Video with the highest % likes-to-dislikes:"
-puts big_indent + channel_insights.get_video_with_highest_likes_ratio
+puts big_indent + channel_insights.video_with_highest_likes_ratio
 puts
 puts small_indent + "Average likes-to-dislikes ratio:"
 puts big_indent + channel_insights.mean_likes_ratio + "%"
