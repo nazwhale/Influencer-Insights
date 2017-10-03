@@ -59,7 +59,7 @@ describe Insights do
 
   describe '#mean_likes_ratio' do
     it 'returns the average percentage of likes to dislikes' do
-      mean_likes_ratio = "99.5"
+      mean_likes_ratio = 99.5
       expect(insights.mean_likes_ratio).to eq mean_likes_ratio
     end
   end
@@ -73,7 +73,7 @@ describe Insights do
 
   describe '#mean_release_interval' do
     it 'finds the mean interval between influencers videos' do
-      mean_interval = "15.0"
+      mean_interval = 15.0
       expect(insights.mean_release_interval).to eq mean_interval
     end
   end

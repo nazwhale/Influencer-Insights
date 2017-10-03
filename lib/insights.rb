@@ -19,8 +19,7 @@ class Insights
   end
 
   def mean_likes_ratio
-    ratios = ratios_array
-    mean(ratios)
+    mean(ratios_array)
   end
 
   def total_views
@@ -43,7 +42,7 @@ class Insights
   def mean(array)
     total = array.inject { |sum, item| sum + item }.to_f
     mean = total / array.length
-    mean.round(1).to_s
+    mean.round(1)
   end
 
   def likes_ratio(likes, dislikes)
