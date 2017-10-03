@@ -66,7 +66,7 @@ describe Insights do
 
   describe '#total_views' do
     it 'returns the summed views for all videos' do
-      total_views = "49400"
+      total_views = 49400
       expect(insights.total_views).to eq total_views
     end
   end

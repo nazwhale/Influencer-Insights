@@ -24,9 +24,7 @@ class Insights
   end
 
   def total_views
-    sum = 0
-    @video_statistics.each { |video| sum += video["views"] }
-    sum.to_s
+    @video_statistics.inject(0) { |sum, video| sum + video["views"] }
   end
 
   def mean_release_interval
@@ -78,9 +76,7 @@ class Insights
   end
 
   def release_times
-    release_times = []
-    @video_statistics.each { |video| release_times << video["published_at"] }
-    release_times
+    @video_statistics.map { |video| video["published_at"] }
   end
 
   def convert_to_datetime(time)
