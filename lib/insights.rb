@@ -20,16 +20,16 @@ class Insights
 
   def mean_likes_ratio
     ratios = ratios_array
-    calculate_mean(ratios)
+    mean(ratios)
   end
 
-  def compute_total_views
+  def total_views
     sum = 0
     @video_statistics.each { |video| sum += video["views"] }
     sum.to_s
   end
 
-  def compute_mean_release_interval
+  def mean_release_interval
     ordered_release_times = release_times.sort
     ordered_release_times.map! { |time| convert_to_datetime(time) }
     mean_intervals(ordered_release_times)
@@ -42,13 +42,13 @@ class Insights
     parser.read_and_parse
   end
 
-  def calculate_mean(array)
+  def mean(array)
     total = array.inject { |sum, item| sum + item }.to_f
     mean = total / array.length
     mean.round(1).to_s
   end
 
-  def compute_likes_ratio(likes, dislikes)
+  def likes_ratio(likes, dislikes)
     total = likes + dislikes
     (likes.to_f / total.to_f) * 100
   end
@@ -57,7 +57,7 @@ class Insights
     titles_to_ratios = {}
 
     @video_statistics.each do |video|
-      ratio = compute_likes_ratio(video["likes"], video["dislikes"])
+      ratio = likes_ratio(video["likes"], video["dislikes"])
       video_name = isolate_video_name(video["title"])
       titles_to_ratios[video_name] = ratio
     end
@@ -89,7 +89,7 @@ class Insights
 
   def mean_intervals(array)
     intervals = intervals(array)
-    calculate_mean(intervals)
+    mean(intervals)
   end
 
   def intervals(array)

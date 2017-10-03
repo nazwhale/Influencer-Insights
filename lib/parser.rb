@@ -16,10 +16,10 @@ class Parser
 
   def appropriate_json?(parsed_json)
     message = "Please enter a json file with influencer data"
-    parsed_json["videos"].each { |video| fail message unless has_correct_keys?(video) }
+    parsed_json["videos"].each { |video| fail message unless correct_keys?(video) }
   end
 
-  def has_correct_keys?(video)
+  def correct_keys?(video)
     video.key?("title") &&
     video.key?("views") &&
     video.key?("published_at") &&

@@ -64,17 +64,17 @@ describe Insights do
     end
   end
 
-  describe '#compute_total_views' do
+  describe '#total_views' do
     it 'returns the summed views for all videos' do
       total_views = "49400"
-      expect(insights.compute_total_views).to eq total_views
+      expect(insights.total_views).to eq total_views
     end
   end
 
-  describe '#compute_mean_release_interval' do
+  describe '#mean_release_interval' do
     it 'finds the mean interval between influencers videos' do
       mean_interval = "15.0"
-      expect(insights.compute_mean_release_interval).to eq mean_interval
+      expect(insights.mean_release_interval).to eq mean_interval
     end
   end
 
